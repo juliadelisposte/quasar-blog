@@ -1,30 +1,36 @@
 <template>
   <div class="page-post">
+    <div class ="row">
+      <div class="shadow-12">
         <div class="page-post__card">
-            <div class="page-post__header--size-lg" >
-                <!-- The title of the post will catch the information of the API and shows up where the title it is-->
-               <span class="page-post__title"> Título do post<br> </span>
-                <span class="page-post__second-text"> Autor: <br> Data: 08/04/2021 <br> Categoria: </span>
+          <div class="page-post__header--size-lg">
+            <div class="page-post__title">
+              <div class="q-my-md">
+                <div class="text-primary">
+                  <div class='text-h6'>Título do post</div>
+                </div>
+              </div>
+              <div class="text-subtitle2">
+                <div class="column">
+                  <div>Autor:</div>
+                  <div>Data: 08/04/2021</div>
+                  <div>Categoria:</div>
+                </div>
+              </div>
+              <div class="page-post__image">
+                <img src="https://i.pinimg.com/originals/8f/53/d4/8f53d45eb2a7572bdd26621c9c227841.png" width='97%' height='250px'>
+              </div>
+              <span class="page-post__description">Aqui entrará uma breve descrição do que o post se trata</span>
+              <div class="page-post__action">
+                <q-btn-toggle v-model="model" toggle-color="primary" :options="[ {label: 'Visualizar post', value: 'one'}, {label: 'Editar post', value: 'two'}, {label: 'Excluir post', value: 'two'},]"/>
+              </div>
             </div>
-            <!-- Image insertion-->
-            <div class="page-post__image"> <img src="https://lh3.googleusercontent.com/proxy/qWq6bDfFbztBQI_Xn2wGsv_jSFmpgaR9ZowJzniknH7DpMeSnuvWNF0gpdUVlmVOC2noCisbIAE9N2Rmsv7PuIcWv_vbEElhD-9LQdtKHZEBkyq7TmfE0HuAv0Cf83ml3x-HrkA" width='95%' height='250px'> </div>
-            <!--<div class="page-post__button-card">-->
-            <span class="page-post__description"> Aqui entrará uma breve descrição do que o post se trata </span>
-            <div class="page-post__action">
-               <q-btn-toggle
-               v-model="model"
-               toggle-color="primary"
-               :options="[
-               {label: 'Visualizar post', value: 'one'},
-               {label: 'Editar post', value: 'two'},
-               {label: 'Excluir post', value: 'two'},
-        ]"
-        />
-            </div>
+          </div>
         </div>
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'PageIndex'

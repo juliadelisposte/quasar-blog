@@ -1,5 +1,5 @@
 // app global css in SCSS form
-$text-color:#ffd900;
+/*$text-color:#ffd900;
 $second-text-color:#ffffff;
 $titles-color:#ffffff;
 $font:'Courier New', Courier, monospace;
@@ -63,14 +63,22 @@ $border-radius: 12px;
             width: 100%;
             height: 100%;
             color:$second-text-color;
+            text-shadow: 6px 2px 18px #e5ff00;
         }
     }
-}*/
+}
 
 .page-post__title {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ff0582;
-    margin-left: 170px;
+    margin-left: 88px;
+    font-size: 30px;
+    color: $titles-color;
+}
+.second-page-post__title {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ff0582;
+    margin-left: 88px;
     font-size: 30px;
     color: $titles-color;
 }
@@ -80,53 +88,51 @@ $border-radius: 12px;
     width: 100%;
     height: 250px;
     border-radius: $border-radius;
-}*/
+}*//*
 img{
-    margin-left: 2.5%;
+    margin-left: 1.5%;
 }
-.page-post__card {    
+.page-post__card {
+    width: 28%;    
     box-shadow: $shadow;
     .page-post__description {
         margin-left: 4.8%;
-        //margin-right: 8px;
+        margin-right: 8px;
     }
 }
     .page-post__action {
         button{
-        width: 200px;
+        width: 88px;
         height: 38px;
         color:$titles-color;
+        font-size: 11.4px;
         margin-left: 3%;
         margin-right: 21%;
         background-color: $button-color;
         margin-top: $margin;
         border-radius: $border-radius;
-    }/*
-    margin-left: 1px;
-    //box-shadow: $shadow;
-    margin-top: $margin;*/
+    }
 }
 
-/*
 .second-page-post__card {  
-    box-shadow: $shadow;  
+    width: 28%;    
+    box-shadow: $shadow;
     .second-page-post__description {
-        margin-left: 8px;
+        margin-left: 4.8%;
         margin-right: 8px;
     }
 }
     .second-page-post__action {
         button{
-        width: 100px;
-        height: 38px;
-        color:$titles-color;
-        margin-left: 31%;
-        background-color: $button-color;
-        margin-top: $margin;
-        border-radius: $border-radius;
-        }
-    margin-left: 1px;
-    box-shadow: $shadow;
-    margin-top: $margin;
+            width: 88px;
+            height: 38px;
+            color:$titles-color;
+            font-size: 11.4px;
+            margin-left: 3%;
+            margin-right: 21%;
+            background-color: $button-color;
+            margin-top: $margin;
+            border-radius: $border-radius;
+        };
     }
 */
