@@ -12,6 +12,7 @@ export default {
   components: {
     CardPost
   },
+
   computed: {
     cardContent () {
       return {

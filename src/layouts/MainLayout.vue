@@ -31,10 +31,16 @@
 
 import EssentialLink from 'components/EssentialLink.vue'
 
-const linksData = {
-  title: 'Home',
-  link: '/'
-}
+const linksData = [
+  {
+    title: 'Home',
+    link: ''
+  },
+  {
+    title: 'Post',
+    link: ''
+  }
+]
 
 export default {
   name: 'MainLayout',

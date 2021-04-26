@@ -1,5 +1,5 @@
 <template>
-  <card content='contentCard'>
+  <card contentCard>
     <div class="text-primary">
       <div class="text-center">
         <div class='text-h6'> {{ content.title }} </div>
@@ -15,9 +15,9 @@
     <span class="card-post__description">{{ content.description }}</span>
     <div class="row">
       <div class="q-pa-md q-gutter-sm">
-        <q-btn size="12px" color="primary" text-color="white" :label="`${content.button}`" />
-        <q-btn size="12px" color="primary" text-color="white" :label="`${content.button_two}`" />
-        <q-btn size="12px" color="primary" text-color="white" :label="`${content.button_three}`" />
+        <q-btn size="12px" color="primary" text-color="white" :label="content.button" />
+        <q-btn size="12px" color="primary" text-color="white" :label="content.button_two" />
+        <q-btn size="12px" color="primary" text-color="white" :label="content.button_three" />
       </div>
     </div>
   </card>
@@ -33,43 +33,9 @@ export default {
   },
   props: {
     content: {
-      title: {
-        type: String
-      },
-      alteration: {
-        type: String
-      },
-      button: {
-        type: String
-      },
-      button_two: {
-        type: String
-      },
-      button_three: {
-        type: String
-      },
-      description: {
-        type: String
-      },
-      photo: {
-        type: String
-      },
-      author: {
-        type: String
-      },
-      date: {
-        type: Date
-      },
-      category: {
-        type: String
-      }
+      type: Object,
+      default: () => ({})
     }
   }
 }
 </script>
-
-<style>
-  q-img{
-    width: 100%
-  }
-</style>
