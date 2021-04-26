@@ -7,7 +7,7 @@
           <q-list>
             <q-item clickable v-close-popup>
               <q-item-section>
-                <essential-link v-for="link in essentialLinks" :key="link.title" v-bind="link"/>
+                <essential-link v-for="link in essentialLinks" :key="link.title" :content="link" />
               </q-item-section>
             </q-item>
           </q-list>
@@ -28,7 +28,6 @@
 </template>
 
 <script>
-
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
@@ -55,7 +54,7 @@ export default {
 </script>
 
 <style scoped>
-q-list {
-  min-width: 100px
-}
+  q-list {
+    min-width: 100px
+  }
 </style>

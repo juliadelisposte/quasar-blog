@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import CardPost from 'src/components/CardPost.vue'
 
 export default {
@@ -22,12 +21,13 @@ export default {
         date: '23/04/2021',
         category: 'categoria',
         button: 'Leia Mais',
-        button_two: 'Editar Post',
-        button_three: 'Excluir post',
+        buttonTwo: 'Editar Post',
+        buttonThree: 'Excluir post',
         photo: 'https://besthqwallpapers.com/Uploads/27-12-2017/35250/thumb2-4k-living-room-white-and-gray-interior-modern-apartment-sofa.jpg'
       }
     }
   },
+
   name: 'PageIndex'
 }
 </script>
