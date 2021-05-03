@@ -11,13 +11,15 @@
       <div>Data: {{ content.date }} </div>
       <div>Categoria: {{ content.category }} </div>
     </div>
-    <q-img :src="content.photo"/>
+    <q-img class="image" :src="content.photo"/>
     <span class="card-post__description">{{ content.description }}</span>
     <div class="row">
-      <div class="q-pa-md q-gutter-sm">
-        <q-btn size="12px" color="primary" text-color="white" :label="content.button" />
-        <q-btn size="12px" color="primary" text-color="white" :label="content.buttonTwo" />
-        <q-btn size="12px" color="primary" text-color="white" :label="content.buttonThree" />
+      <div class="q-pa-md">
+        <div class="q-gutter-sm">
+          <q-btn size="10px" color="primary" text-color="white" :label="content.button" />
+          <q-btn size="10px" color="primary" text-color="white" :label="content.buttonTwo" />
+          <q-btn size="10px" color="primary" text-color="white" :label="content.buttonThree" />
+        </div>
       </div>
     </div>
   </card>
