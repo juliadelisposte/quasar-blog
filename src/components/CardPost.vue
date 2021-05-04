@@ -2,7 +2,7 @@
   <card>
     <div class="text-primary">
       <div class="text-center">
-        <div class='text-h6'>{{ content.title }}</div>
+        <div class="text-h6">{{ content.title }}</div>
       </div>
     </div>
     <div> Data da última alteração: {{ content.alteration }} </div>
@@ -11,7 +11,7 @@
       <div>Data: {{ content.date }} </div>
       <div>Categoria: {{ content.category }} </div>
     </div>
-    <q-img class="image" :src="content.photo"/>
+    <q-img :src="content.photo"/>
     <span class="card-post__description">{{ content.description }}</span>
     <div class="row">
       <div class="q-pa-md">

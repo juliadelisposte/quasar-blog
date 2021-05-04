@@ -1,19 +1,17 @@
 <template>
   <div class="q-pl-md">
-    <div class="card">
-      <slot/>
-    </div>
+    <slot/>
   </div>
 </template>
 
 <style>
-  .card {
+  .q-pl-md {
     box-shadow: 5px 5px 5px #bdbdbd;
     border-radius: 12px;
-    width: 340px;
+    width: auto;
     height: auto;
   }
-  .image{
+  .q-img {
     max-height: 210px;
   }
 </style>

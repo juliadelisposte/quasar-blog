@@ -4,11 +4,16 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') },
+      { path: '', component: () => import('pages/posts/postsList.vue') },
       {
         path: 'create-posts',
-        component: () => import('pages/CreatePosts.vue'),
-        name: 'CreatePost'
+        component: () => import('pages/posts/postsForm.vue'),
+        name: 'postsForm'
+      },
+      {
+        path: 'authors-list',
+        component: () => import('pages/authors/authorsList.vue'),
+        name: 'authorsList'
       }
     ]
   },
