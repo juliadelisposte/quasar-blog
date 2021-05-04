@@ -1,7 +1,7 @@
 <template>
-  <div class="page-CreatePost">
+  <div class="page-create-post">
     <div class="row">
-      <div class="Page-CreatePost__selects">
+      <div class="page-create-post__selects">
         <div class="q-pa-md">
           <div class="row">
             <q-select rounded outlined v-model="values.modelcategory" :options="OptionsCategory" label="Categorias" />
@@ -10,7 +10,7 @@
         </div>
       </div>
     </div>
-    <div class="Page-CreatePost__post">
+    <div class="page-create-post__post">
       <div class="q-pa-md">
         <q-form @submit="Submit" class="q-gutter-md">
           <div class="row">
@@ -51,11 +51,11 @@
               </template>
             </q-input>
           </div>
-          <div class="Page-CreatePost__post-img">
+          <div class="page-create-post__post-img">
             <div class="q-pa-lg">
               <div class="row">
                 <q-input v-model="values.url" filled type="url" hint="Insira a URL da imagem" />
-                <div class="Page-CreatePost__img-button">
+                <div class="page-create-post__img-button">
                   <div class="q-pa-sm">
                     <q-btn :loading="loading" :percentage="percentage" round @click="startComputing(2)" icon="cloud_upload" type="Submit" color="primary"/>
                   </div>
@@ -64,7 +64,7 @@
             </div>
           </div>
           <q-input name="title" v-model="values.title" color="primary" label="Título" filled clearable />
-          <div class="Page-CreatePost__post-description">
+          <div class="page-create-post__post-description">
             <q-input name="description" v-model="values.description" color="primary" label="Pequena descrição" error-message="Por favor use no máximo 200 caracteres" :error="!isValid"/>
           </div>
           <q-input name="content" v-model="values.content" color="primary" label="Conteúdo" filled />
@@ -72,7 +72,7 @@
             <q-btn label="Salvar" type="Submit" color="primary"/>
           </div>
         </q-form>
-        <div>Título: {{values.title}} Conteúdo: {{values.content}} Pequena Descrição: {{values.description}}</div>
+        <div>Título: {{ values.title }} Conteúdo: {{ values.content }} Pequena Descrição: {{ values.description }}</div>
       </div>
     </div>
   </div>
@@ -111,10 +111,12 @@ export default {
 </script>
 
 <style>
-.Page-CreatePost__post-description {
+.page-create-post {
+  &__post-description{
     width: 600px;
-  },
-  .Page-CreatePost__img-button{
+  }
+  &__img-button{
     width: 20px;
   }
+}
 </style>

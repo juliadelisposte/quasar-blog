@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="page-index">
     <q-page class="flex flex-center">
       <card-post :content= "CardContent"/>
       <card-post :content= "SecondCardContent"/>
