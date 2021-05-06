@@ -1,25 +1,26 @@
 <template>
-  <div class="page-author-list">
+  <div class="pages-author-list">
     <div class="text-primary text-h4 q-pa-md text-center"> Listagem de Autores </div>
-    <div v-for="value in AuthorsContent" :key="value">
-      <authors :content="value"/>
+    <div class="column items-center">
+      <div class="row">
+        <div v-for="value in authorsContent" :key="value">
+          <authors-list :content="value"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import Authors from 'components/Authors.vue'
+import AuthorsList from 'components/AuthorsList.vue'
 
 export default {
   components: {
-    Authors
-  },
-  IsValid () {
-    this.author = getComputedStyle.CardContent.author
+    AuthorsList
   },
 
   computed: {
-    AuthorsContent () {
+    authorsContent () {
       return [
         {
           author: 'desconhecido',
