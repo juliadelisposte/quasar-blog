@@ -3,8 +3,8 @@
     <div class="text-primary text-h4 q-pa-md text-center"> Listagem de Autores </div>
     <div class="column items-center">
       <div class="row">
-        <div v-for="value in authorsContent" :key="value">
-          <authors-list :content="value"/>
+        <div v-for="author in authorsContent" :key="author">
+          <authors-content :content="author"/>
         </div>
       </div>
     </div>
@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import AuthorsList from 'components/AuthorsList.vue'
+import AuthorsContent from 'components/AuthorsContent.vue'
 
 export default {
   components: {
-    AuthorsList
+    AuthorsContent
   },
 
   computed: {

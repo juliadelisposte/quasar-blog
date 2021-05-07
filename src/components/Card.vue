@@ -1,7 +1,11 @@
 <template>
-  <div class="card">
-    <div class="q-pl-md flex inline shadow-box flex-center column items-center" :class="`shadow-3`">
-      <slot/>
-    </div>
+  <div class=" shadow-3 q-pl-md q-mx-md q-my-sm flex inline shadow-box flex-center column items-center">
+    <slot/>
   </div>
 </template>
+
+<style>
+  .q-img {
+    max-height: 210px;
+  }
+</style>

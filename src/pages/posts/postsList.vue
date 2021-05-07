@@ -2,7 +2,7 @@
   <div class="page-posts-list">
     <q-page class="flex flex-center">
       <div v-for="value in postsList" :key="value">
-        <card-list :content="value"/>
+        <card-content :content="value"/>
       </div>
     </q-page>
     <div class=" flex flex-center">
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import CardList from 'src/components/CardList.vue'
+import CardContent from 'src/components/CardContent.vue'
 
 export default {
   data () {
@@ -22,7 +22,7 @@ export default {
   },
 
   components: {
-    CardList
+    CardContent
   },
 
   computed: {
@@ -63,6 +63,42 @@ export default {
           buttonTwo: 'Editar Post',
           buttonThree: 'Excluir post',
           photo: 'https://images6.alphacoders.com/103/1035008.jpg'
+        },
+        {
+          title: 'titulo',
+          alteration: '23/04/2021',
+          author: 'desconhecido',
+          date: '23/04/2021',
+          category: 'categoria',
+          description: 'A pequena descrição entra aqui',
+          button: 'Leia Mais',
+          buttonTwo: 'Editar Post',
+          buttonThree: 'Excluir post',
+          photo: 'https://i.pinimg.com/736x/c3/6b/00/c36b00c3a9e3bfddea0c60be4c240990.jpg'
+        },
+        {
+          title: 'titulo',
+          alteration: '23/04/2021',
+          author: 'desconhecido',
+          date: '23/04/2021',
+          category: 'categoria',
+          description: 'A pequena descrição entra aqui',
+          button: 'Leia Mais',
+          buttonTwo: 'Editar Post',
+          buttonThree: 'Excluir post',
+          photo: 'https://i.pinimg.com/736x/c3/6b/00/c36b00c3a9e3bfddea0c60be4c240990.jpg'
+        },
+        {
+          title: 'titulo',
+          alteration: '23/04/2021',
+          author: 'desconhecido',
+          date: '23/04/2021',
+          category: 'categoria',
+          description: 'A pequena descrição entra aqui',
+          button: 'Leia Mais',
+          buttonTwo: 'Editar Post',
+          buttonThree: 'Excluir post',
+          photo: 'https://i.pinimg.com/736x/c3/6b/00/c36b00c3a9e3bfddea0c60be4c240990.jpg'
         }
       ]
     }
