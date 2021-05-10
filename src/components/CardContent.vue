@@ -1,7 +1,7 @@
 <template>
   <card>
     <div class="card-content">
-      <div class="text-primary text-center text-h6">{{ content.title }}</div>
+      <h1 class="text-primary text-center text-h6">{{ content.title }}</h1>
       <div> Data da última alteração: {{ content.alteration }} </div>
       <div class="column">
         <div>Autor: {{ content.author }} </div>
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Card from './Card.vue'
+import Card from './Card'
 
 export default {
   components: {
