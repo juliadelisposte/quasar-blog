@@ -8,7 +8,7 @@
           </div>
         </div>
       </div>
-      <div class="row justify-center q-mt-md">
+      <div class="row justify-center">
         <div class="col-1">
           <q-btn-dropdown size="13px" color="primary" icon="add_a_photo" stack glossy label="Imagem">
             <q-item clickable>
@@ -67,6 +67,7 @@ export default {
         url: '',
         modelCategory: 'Escolha a categoria',
         modelAuthor: 'Escolha o autor',
+        secondDate: '2021/04/30',
         date: '2021/04/29'
       },
       optionsCategory: [

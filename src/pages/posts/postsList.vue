@@ -35,9 +35,9 @@ export default {
           date: '23/04/2021',
           category: 'categoria',
           description: 'A pequena descrição entra aqui',
-          button: 'Leia Mais',
-          buttonTwo: 'Editar Post',
-          buttonThree: 'Excluir post',
+          buttonReadMore: 'Leia Mais',
+          buttonEdit: 'Editar Post',
+          buttonDelete: 'Excluir post',
           photo: 'https://i.pinimg.com/736x/c3/6b/00/c36b00c3a9e3bfddea0c60be4c240990.jpg'
         },
         {
@@ -47,9 +47,9 @@ export default {
           date: '23/04/2021',
           category: 'categoria 2',
           description: 'A pequena descrição entra aqui',
-          button: 'Leia Mais',
-          buttonTwo: 'Editar Post',
-          buttonThree: 'Excluir post',
+          buttonReadMore: 'Leia Mais',
+          buttonEdit: 'Editar Post',
+          buttonDelete: 'Excluir post',
           photo: 'https://wallpapercave.com/wp/wp6181121.jpg'
         },
         {
@@ -59,46 +59,46 @@ export default {
           date: '23/04/2021',
           category: 'categoria 3',
           description: 'A pequena descrição entra aqui',
-          button: 'Leia Mais',
-          buttonTwo: 'Editar Post',
-          buttonThree: 'Excluir post',
+          buttonReadMore: 'Leia Mais',
+          buttonEdit: 'Editar Post',
+          buttonDelete: 'Excluir post',
           photo: 'https://images6.alphacoders.com/103/1035008.jpg'
         },
         {
-          title: 'titulo',
-          alteration: '23/04/2021',
-          author: 'desconhecido',
+          title: 'titulo 3',
+          alteration: '03/05/2021',
+          author: 'desconhecido 3',
           date: '23/04/2021',
-          category: 'categoria',
+          category: 'categoria 3',
           description: 'A pequena descrição entra aqui',
-          button: 'Leia Mais',
-          buttonTwo: 'Editar Post',
-          buttonThree: 'Excluir post',
-          photo: 'https://i.pinimg.com/736x/c3/6b/00/c36b00c3a9e3bfddea0c60be4c240990.jpg'
+          buttonReadMore: 'Leia Mais',
+          buttonEdit: 'Editar Post',
+          buttonDelete: 'Excluir post',
+          photo: 'https://images6.alphacoders.com/103/1035008.jpg'
         },
         {
-          title: 'titulo',
-          alteration: '23/04/2021',
-          author: 'desconhecido',
+          title: 'titulo 3',
+          alteration: '03/05/2021',
+          author: 'desconhecido 3',
           date: '23/04/2021',
-          category: 'categoria',
+          category: 'categoria 3',
           description: 'A pequena descrição entra aqui',
-          button: 'Leia Mais',
-          buttonTwo: 'Editar Post',
-          buttonThree: 'Excluir post',
-          photo: 'https://i.pinimg.com/736x/c3/6b/00/c36b00c3a9e3bfddea0c60be4c240990.jpg'
+          buttonReadMore: 'Leia Mais',
+          buttonEdit: 'Editar Post',
+          buttonDelete: 'Excluir post',
+          photo: 'https://images6.alphacoders.com/103/1035008.jpg'
         },
         {
-          title: 'titulo',
-          alteration: '23/04/2021',
-          author: 'desconhecido',
+          title: 'titulo 3',
+          alteration: '03/05/2021',
+          author: 'desconhecido 3',
           date: '23/04/2021',
-          category: 'categoria',
+          category: 'categoria 3',
           description: 'A pequena descrição entra aqui',
-          button: 'Leia Mais',
-          buttonTwo: 'Editar Post',
-          buttonThree: 'Excluir post',
-          photo: 'https://i.pinimg.com/736x/c3/6b/00/c36b00c3a9e3bfddea0c60be4c240990.jpg'
+          buttonReadMore: 'Leia Mais',
+          buttonEdit: 'Editar Post',
+          buttonDelete: 'Excluir post',
+          photo: 'https://images6.alphacoders.com/103/1035008.jpg'
         }
       ]
     }

@@ -11,9 +11,9 @@
       <q-img class="card-content__image" :src="content.photo"/>
       <span class="q-pa-xl">{{ content.description }}</span>
         <div class="row q-pa-md q-gutter-sm">
-          <q-btn size="10px" color="primary" text-color="white" :label="content.button" />
-          <q-btn size="10px" color="primary" text-color="white" :label="content.buttonTwo" />
-          <q-btn size="10px" color="primary" text-color="white" :label="content.buttonThree" />
+          <q-btn size="10px" color="primary" text-color="white" :label="content.buttonReadMore" />
+          <q-btn size="10px" color="primary" text-color="white" :label="content.buttonEdit" />
+          <q-btn size="10px" color="primary" text-color="white" :label="content.buttonDelete" />
         </div>
     </div>
   </card>
@@ -36,8 +36,10 @@ export default {
 }
 </script>
 
-<style>
- .card-list__image {
-    max-height: 210px;
+<style lang="scss">
+  .card-content {
+    &__image {
+      max-height: 210px;
+    }
   }
 </style>
