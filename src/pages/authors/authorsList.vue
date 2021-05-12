@@ -5,7 +5,7 @@
       <div v-for="value in authorsList" :key="value">
         <div class="q-mr-xl"> <span class="text-bold"> Autor: </span> {{ value.author }} </div>
         <div class="q-mr-xl"> <span class="text-bold"> E-mail: </span> {{ value.email }} </div>
-        <q-btn class="q-mt-sm q-mt-sm q-mb-md" size="12px" label="Excluir" color="primary" />
+        <q-btn class="q-mt-sm q-mb-md" size="12px" label="Excluir" color="primary" />
       </div>
     </div>
   </div>
