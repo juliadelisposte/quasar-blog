@@ -11,9 +11,9 @@
       <q-img class="card-content__image" :src="content.photo"/>
       <span class="q-pa-xl">{{ content.description }}</span>
         <div class="row q-pa-md q-gutter-sm">
-          <q-btn :size="buttonSize.button" color="primary" text-color="white" :label="content.buttonReadMore" />
-          <q-btn :size="buttonSize.button" color="primary" text-color="white" :label="content.buttonEdit" />
-          <q-btn :size="buttonSize.button" color="primary" text-color="white" :label="content.buttonDelete"></q-btn>
+          <q-btn :size="buttonSize.size" :color="buttonSize.color" :text-color="buttonSize.textColor" :label="content.buttonReadMore" />
+          <q-btn :size="buttonSize.size" :color="buttonSize.color" :text-color="buttonSize.textColor" :label="content.buttonEdit" />
+          <q-btn :size="buttonSize.size" :color="buttonSize.color" :text-color="buttonSize.textColor" :label="content.buttonDelete"/>
         </div>
     </div>
   </card>
@@ -26,11 +26,12 @@ export default {
   components: {
     Card
   },
-
   computed: {
     buttonSize () {
       return {
-        button: '10px'
+        size: '10px',
+        color: 'primary',
+        textColor: 'white'
       }
     }
   },
