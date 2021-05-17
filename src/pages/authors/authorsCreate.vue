@@ -1,6 +1,6 @@
 <template>
-  <div class="authors-create">
-    <h1 class="authors-create__title text-h5 row justify-center q-py-md"> Criação de Autores </h1>
+  <div class="pages-authors-create">
+    <h1 class="pages-authors-create__title text-h5 row justify-center q-py-md"> Criação de Autores </h1>
     <div class="row justify-center col col-md-8 q-pt-sm">
       <div class="col col-md-8 q-pt-sm">
         <q-form @submit="submit" class="q-gutter-md">
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss">
-.authors-create {
+.pages-authors-create {
   &__title {
     color: $primary;
   }
