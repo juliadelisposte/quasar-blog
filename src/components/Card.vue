@@ -1,14 +1,5 @@
 <template>
-<div class="col-12">
-  <div class="card">
+  <div class="shadow-3 q-pl-md q-mx-md q-my-sm flex inline shadow-box flex-center column items-center">
     <slot/>
   </div>
-</div>
 </template>
-
-<style>
-  .card {
-    box-shadow: 5px 5px 5px #bdbdbd;
-    border-radius: 12px;
-  }
-</style>
