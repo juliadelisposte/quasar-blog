@@ -32,12 +32,20 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Home',
+    title: 'Listagem de Posts',
     link: ''
   },
   {
-    title: 'Post',
-    link: ''
+    title: 'Criação de Autores',
+    link: '/create-authors'
+  },
+  {
+    title: 'Criação de Posts',
+    link: '/create-posts'
+  },
+  {
+    title: 'Listagem de Autores',
+    link: '/authors-list'
   }
 ]
 
