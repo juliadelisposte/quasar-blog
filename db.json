@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "mainImageURL": "https://d2bsjm9patfdz0.cloudfront.net/images/0000158_monica-turma-da-monica.png",
+      "title": "Monica",
+      "shortDescription": "monique",
+      "authorName": "Monica",
+      "category": "Exterior",
+      "mainText": "te",
+      "categoryOptions": [
+        "Esportes",
+        "Tecnologia",
+        "Culinária",
+        "Mercado Financeiro",
+        "Animais",
+        "Brasil",
+        "Exterior",
+        "Outros"
+      ],
+      "postDate": "28/04/2021 14:17:18",
+      "id": 1
+    }
+  ],
+  "authors": [
+    {
+      "name": "Monica",
+      "email": "monica@hot.com",
+      "id": 1
+    }
+  ]
+}
