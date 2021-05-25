@@ -7,7 +7,7 @@
           <q-list>
             <q-item clickable v-close-popup>
               <q-item-section>
-                <essential-link v-for="name in essentialLinks" :key="name.title" :content="name" />
+                <essential-link v-for="route in essentialLinks" :key="route.title" :content="route" />
               </q-item-section>
             </q-item>
           </q-list>
