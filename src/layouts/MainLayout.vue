@@ -33,19 +33,19 @@ import EssentialLink from 'components/EssentialLink.vue'
 const linksData = [
   {
     title: 'Listagem de Posts',
-    name: 'PostsList'
+    name: 'RoutePostsList'
   },
   {
     title: 'Criação de Autores',
-    name: 'AuthorsCreate'
+    name: 'RouteAuthorsCreate'
   },
   {
     title: 'Criação de Posts',
-    name: 'PostsCreate'
+    name: 'RoutePostsCreate'
   },
   {
     title: 'Listagem de Autores',
-    name: 'AuthorsList'
+    name: 'RouteAuthorsList'
   }
 ]
 
