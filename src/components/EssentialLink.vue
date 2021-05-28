@@ -1,5 +1,5 @@
 <template>
-  <q-item clickable tag="a" target="_blank" :href= "content.link">
+  <q-item :to="{ name: content.routeName }">
     <q-item-section>
       <q-item-label> {{ content.title }} </q-item-label>
     </q-item-section>

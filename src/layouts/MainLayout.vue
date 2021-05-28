@@ -7,7 +7,7 @@
           <q-list>
             <q-item clickable v-close-popup>
               <q-item-section>
-                <essential-link v-for="link in essentialLinks" :key="link.title" :content="link" />
+                <essential-link v-for="route in essentialLinks" :key="route.title" :content="route" />
               </q-item-section>
             </q-item>
           </q-list>
@@ -32,18 +32,28 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Home',
-    link: ''
+    title: 'Listagem de Posts',
+    routeName: 'PostsList'
   },
   {
-    title: 'Post',
-    link: ''
+    title: 'Criação de Autores',
+    routeName: 'AuthorsCreate'
+  },
+  {
+    title: 'Criação de Posts',
+    routeName: 'PostsCreate'
+  },
+  {
+    title: 'Listagem de Autores',
+    routeName: 'AuthorsList'
   }
 ]
 
 export default {
   name: 'MainLayout',
+
   components: { EssentialLink },
+
   data () {
     return {
       leftDrawerOpen: false,
