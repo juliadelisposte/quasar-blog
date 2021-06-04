@@ -4,8 +4,8 @@
     <div class="row justify-center">
       <div class="col-md-8 q-pt-sm">
         <q-form @submit="submit" class="q-gutter-md">
-          <q-input filled v-model="information.name" label="Insira o nome do autor" hint="Nome e Sobrenome"/>
-          <q-input filled v-model="information.email" label="Insira o e-mail do autor" type="email"/>
+          <q-input filled v-model="value.name" label="Insira o nome do autor" hint="Nome e Sobrenome"/>
+          <q-input filled v-model="value.email" label="Insira o e-mail do autor" type="email"/>
           <div class="row justify-center q-pt-sm">
             <q-btn @click="saveAuthor" label="Salvar" type="submit" color="primary"/>
           </div>
@@ -21,7 +21,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   data () {
     return {
-      information: {
+      value: {
         name: '',
         email: ''
       }
@@ -44,7 +44,10 @@ export default {
     }),
 
     saveAuthor () {
-      this.$axios.post('authors', this.information)
+      this.$axios.post('authors', this.value)
+    },
+    async saveAuthors () {
+      await this.addAuthors(this.value)
     }
   }
 }

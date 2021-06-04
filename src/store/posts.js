@@ -5,9 +5,7 @@ const state = {
 }
 
 const getters = {
-  postsList: state => {
-    return state.posts
-  }
+  postsList: state => state.posts
 }
 
 const mutations = {
@@ -20,7 +18,7 @@ const mutations = {
 }
 
 const actions = {
-  async addPosts ({ commit }, value) {
+  addPosts ({ commit }, value) {
     commit('addPosts', value)
   },
 

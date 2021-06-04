@@ -1,13 +1,17 @@
 import api from 'axios'
 
+const requestService = async (method, url, params = {}, data = {}) => {
+  return await api({ method, url, data, params })
+}
+
+const deleteMethod = (url, params) => requestService('DELETE', url, params)
+
 const state = {
   authors: []
 }
 
 const getters = {
-  authorsList: state => {
-    return state.authors
-  }
+  authorsList: state => state.authors
 }
 
 const mutations = {
@@ -30,6 +34,13 @@ const actions = {
       const { data } = await api.get('authors')
       commit('setAuthors', data)
     } catch {}
+  },
+  async deleteAuthor ({ commit }, id) {
+    try {
+      await deleteMethod(`http://localhost:3000/authors/${id}`)
+    } catch (error) {
+      console.log()
+    }
   }
 }
 
