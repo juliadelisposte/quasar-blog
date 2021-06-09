@@ -11,22 +11,42 @@ const getters = {
 const mutations = {
   setPosts (state, value) {
     state.posts = value
-  },
-  addPosts (state, value) {
-    state.posts.push(value)
   }
+
 }
 
 const actions = {
-  addPosts ({ commit }, value) {
-    commit('addPosts', value)
-  },
-
   async fetchPosts ({ commit }) {
     try {
       const { data } = await api.get('posts')
       commit('setPosts', data)
     } catch {}
+  },
+
+  async onlyPost ({ commit }, id) {
+    try {
+      const { data } = await api.get(`http://localhost:3000/posts/${id}`)
+      return data
+    } catch {}
+  },
+
+  async putPosts ({ commit }, editPost) {
+    try {
+      const { data } = await api.put(`http://localhost:3000/posts/${editPost.id}`, editPost.values)
+      return data
+    } catch {}
+  },
+
+  async postsCreate ({ commit }, values) {
+    try {
+      await api.post('posts', values)
+    } catch {}
+  },
+
+  async deletePost ({ commit }, id) {
+    try {
+      await api.delete(`http://localhost:3000/posts/${id}`)
+    } catch (error) {}
   }
 }
 
