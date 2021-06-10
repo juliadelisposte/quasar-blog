@@ -30,7 +30,7 @@ const actions = {
     } catch {}
   },
 
-  async putPosts ({ commit }, { id, values }) {
+  async editPosts ({ commit }, { id, values }) {
     try {
       const { data } = await api.put(`posts/${id}`, values)
       return data
