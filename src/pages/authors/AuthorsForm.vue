@@ -28,10 +28,6 @@ export default {
     }
   },
 
-  created () {
-    this.fetchAuthors()
-  },
-
   methods: {
     ...mapActions({
       fetchAuthors: 'authors/fetchAuthors',

@@ -12,7 +12,6 @@ const mutations = {
   setPosts (state, value) {
     state.posts = value
   }
-
 }
 
 const actions = {
