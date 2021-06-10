@@ -22,7 +22,7 @@ const actions = {
     } catch {}
   },
 
-  async authorsCreate ({ commit }, values) {
+  async createAuthors ({ commit }, values) {
     try {
       await api.post('authors', values)
     } catch {}
@@ -30,9 +30,8 @@ const actions = {
 
   async deleteAuthor ({ commit }, id) {
     try {
-      await api.delete(`http://localhost:3000/authors/${id}`)
-    } catch (error) {
-    }
+      await api.delete(`authors/${id}`)
+    } catch {}
   }
 }
 

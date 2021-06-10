@@ -25,19 +25,19 @@ const actions = {
 
   async onlyPost ({ commit }, id) {
     try {
-      const { data } = await api.get(`http://localhost:3000/posts/${id}`)
+      const { data } = await api.get(`posts/${id}`)
       return data
     } catch {}
   },
 
-  async putPosts ({ commit }, editPost) {
+  async putPosts ({ commit }, { id, values }) {
     try {
-      const { data } = await api.put(`http://localhost:3000/posts/${editPost.id}`, editPost.values)
+      const { data } = await api.put(`posts/${id}`, values)
       return data
     } catch {}
   },
 
-  async postsCreate ({ commit }, values) {
+  async createPosts ({ commit }, values) {
     try {
       await api.post('posts', values)
     } catch {}
@@ -45,8 +45,8 @@ const actions = {
 
   async deletePost ({ commit }, id) {
     try {
-      await api.delete(`http://localhost:3000/posts/${id}`)
-    } catch (error) {}
+      await api.delete(`posts/${id}`)
+    } catch {}
   }
 }
 
