@@ -3,11 +3,11 @@
     <h1 class="text-h5 row justify-center q-py-md text-primary">Criação de Autores</h1>
     <div class="row justify-center">
       <div class="col-md-8 q-pt-sm">
-        <q-form class="q-gutter-md">
+        <q-form class="q-gutter-md" @submit="saveAuthor(createAuthors)">
           <q-input filled v-model="values.name" label="Insira o nome do autor" hint="Nome e Sobrenome"/>
           <q-input filled v-model="values.email" label="Insira o e-mail do autor" type="email"/>
           <div class="row justify-center q-pt-sm">
-            <q-btn @click="saveAuthor(createAuthors)" label="Salvar" type="submit" color="primary"/>
+            <q-btn label="Salvar" type="submit" color="primary"/>
           </div>
         </q-form>
       </div>
