@@ -16,7 +16,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 
 export default {
   data () {
@@ -29,11 +28,6 @@ export default {
   },
 
   methods: {
-    ...mapActions({
-      fetchAuthors: 'authors/fetchAuthors',
-      createAuthors: 'authors/createAuthors'
-    }),
-
     saveAuthor () {
       this.createAuthors(this.values)
     }
