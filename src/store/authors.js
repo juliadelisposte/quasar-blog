@@ -32,6 +32,20 @@ const actions = {
     try {
       await api.delete(`authors/${id}`)
     } catch {}
+  },
+
+  async onlyAuthor ({ commit }, id) {
+    try {
+      const { data } = await api.get(`authors/${id}`)
+      return data
+    } catch {}
+  },
+
+  async editAuthors ({ commit }, { id, values }) {
+    try {
+      const { data } = await api.put(`authors/${id}`, values)
+      return data
+    } catch {}
   }
 }
 
