@@ -5,19 +5,9 @@
       "title": "Monica",
       "shortDescription": "monique",
       "authorName": "Monica",
-      "category": "Exterior",
+      "category": "",
       "mainText": "te",
-      "categoryOptions": [
-        "Esportes",
-        "Tecnologia",
-        "Culinária",
-        "Mercado Financeiro",
-        "Animais",
-        "Brasil",
-        "Exterior",
-        "Outros"
-      ],
-      "postDate": "28/04/2021 14:17:18",
+      "postDate": "28/04/2021",
       "id": 1
     }
   ],
@@ -26,6 +16,16 @@
       "name": "Monica",
       "email": "monica@hot.com",
       "id": 1
+    },
+    {
+      "name": "cleyton",
+      "email": "cleyton@cleyton",
+      "id": 2
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "id": 3
     }
   ]
 }
