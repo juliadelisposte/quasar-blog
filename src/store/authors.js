@@ -22,7 +22,7 @@ const actions = {
     } catch {}
   },
 
-  async createAuthors ({ commit }, values) {
+  async postAuthors ({ commit }, values) {
     try {
       await api.post('authors', values)
     } catch {}
@@ -34,14 +34,14 @@ const actions = {
     } catch {}
   },
 
-  async onlyAuthor ({ commit }, id) {
+  async getAuthor ({ commit }, id) {
     try {
       const { data } = await api.get(`authors/${id}`)
       return data
     } catch {}
   },
 
-  async editAuthors ({ commit }, { id, values }) {
+  async putAuthors ({ commit }, { id, values }) {
     try {
       const { data } = await api.put(`authors/${id}`, values)
       return data
