@@ -34,7 +34,7 @@ const actions = {
     } catch {}
   },
 
-  async getAuthor ({ commit }, id) {
+  async fetchAuthor ({ commit }, id) {
     try {
       const { data } = await api.get(`authors/${id}`)
       return data

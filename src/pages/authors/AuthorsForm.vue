@@ -3,12 +3,12 @@
     <h1 class="text-h5 row justify-center q-py-md text-primary"> {{ submitTitleLabel }} </h1>
     <div class="row justify-center">
       <div class="col-md-8 q-pt-sm">
-        <q-form class="q-gutter-md">
+        <q-form class="q-gutter-md" @submit="createOrEdit">
           <q-input filled v-model="values.name" label="Insira o nome do autor" hint="Nome e Sobrenome"/>
           <q-input filled v-model="values.email" label="Insira o e-mail do autor" type="email"/>
           <div class="row justify-center q-pt-sm">
             <div class="row justify-center q-mt-lg">
-              <q-btn color="primary" @click="createOrEdit" icon-right="send"> {{ submitButtonLabel }} </q-btn>
+              <q-btn color="primary" type="submit" icon-right="send"> {{ submitButtonLabel }} </q-btn>
             </div>
           </div>
         </q-form>
@@ -32,16 +32,16 @@ export default {
   },
 
   computed: {
-    isAuthorsCreate () {
+    isCreateAuthors () {
       return this.$route.name === 'AuthorsCreate'
     },
 
     submitTitleLabel () {
-      return this.isAuthorsCreate ? 'Criação de Autores' : 'Edição de Autores'
+      return `${this.isCreateAuthors ? 'Criação' : 'Edição'} de autores`
     },
 
     submitButtonLabel () {
-      return this.isAuthorsCreate ? 'Criar' : 'Editar'
+      return this.isCreateAuthors ? 'Criar' : 'Editar'
     },
 
     idAuthor () {
@@ -50,7 +50,7 @@ export default {
   },
 
   created () {
-    if (!this.isAuthorsCreate) {
+    if (!this.isCreateAuthors) {
       this.setInputEditValues()
     }
     this.fetchAuthors()
@@ -61,28 +61,29 @@ export default {
       fetchAuthors: 'authors/fetchAuthors',
       postAuthors: 'authors/postAuthors',
       putAuthors: 'authors/putAuthors',
-      getAuthor: 'authors/getAuthor'
+      fetchAuthor: 'authors/fetchAuthor'
     }),
 
     createOrEdit () {
-      this.isAuthorsCreate ? this.submitAuthors() : this.editAuthor()
+      this.isCreateAuthors ? this.createAuthors() : this.editAuthor()
       this.$router.push({ name: 'AuthorsList' })
     },
 
     async editAuthor () {
-      const editAuthors = {
+      const values = {
         values: this.values,
         id: this.idAuthor
       }
-      await this.putAuthors(editAuthors)
+
+      await this.putAuthors(values)
     },
 
-    async submitAuthors () {
+    async createAuthors () {
       await this.postAuthors(this.values)
     },
 
     async setInputEditValues () {
-      const author = await this.getAuthor(this.idAuthor)
+      const author = await this.fetchAuthor(this.idAuthor)
       this.values = extend(true, {}, author)
     }
 
