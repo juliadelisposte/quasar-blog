@@ -86,7 +86,6 @@ export default {
       const author = await this.fetchAuthor(this.idAuthor)
       this.values = extend(true, {}, author)
     }
-
   }
 }
 </script>
