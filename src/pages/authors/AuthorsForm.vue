@@ -3,7 +3,7 @@
     <h1 class="text-h5 row justify-center q-py-md text-primary"> {{ submitTitleLabel }} </h1>
     <div class="row justify-center">
       <div class="col-md-8 q-pt-sm">
-        <q-form class="q-gutter-md" @submit="createOrEdit">
+        <q-form class="q-gutter-md" @submit="submit">
           <q-input filled v-model="values.name" label="Insira o nome do autor" hint="Nome e Sobrenome"/>
           <q-input filled v-model="values.email" label="Insira o e-mail do autor" type="email"/>
           <div class="row justify-center q-pt-sm">
@@ -51,7 +51,7 @@ export default {
 
   created () {
     if (!this.isCreateAuthors) {
-      this.setInputEditValues()
+      this.setAuthorValues()
     }
     this.fetchAuthors()
   },
@@ -64,7 +64,7 @@ export default {
       fetchAuthor: 'authors/fetchAuthor'
     }),
 
-    createOrEdit () {
+    submit () {
       this.isCreateAuthors ? this.createAuthors() : this.editAuthor()
       this.$router.push({ name: 'AuthorsList' })
     },
@@ -82,7 +82,7 @@ export default {
       await this.postAuthors(this.values)
     },
 
-    async setInputEditValues () {
+    async setAuthorValues () {
       const author = await this.fetchAuthor(this.idAuthor)
       this.values = extend(true, {}, author)
     }
