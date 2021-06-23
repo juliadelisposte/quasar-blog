@@ -53,12 +53,10 @@ export default {
     if (!this.isCreateAuthors) {
       this.setAuthorValues()
     }
-    this.fetchAuthors()
   },
 
   methods: {
     ...mapActions({
-      fetchAuthors: 'authors/fetchAuthors',
       postAuthors: 'authors/postAuthors',
       putAuthors: 'authors/putAuthors',
       fetchAuthor: 'authors/fetchAuthor'
