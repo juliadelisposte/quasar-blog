@@ -1,6 +1,6 @@
 <template>
   <div class="page-authors-form">
-    <h1 class="text-h5 row justify-center q-py-md text-primary"> {{ submitTitleLabel }} </h1>
+    <h1 class="text-h5 row justify-center q-py-md text-primary"> {{ pageTitle }} </h1>
     <div class="row justify-center">
       <div class="col-md-8 q-pt-sm">
         <q-form class="q-gutter-md" @submit="submit">
@@ -36,7 +36,7 @@ export default {
       return this.$route.name === 'AuthorsCreate'
     },
 
-    submitTitleLabel () {
+    pageTitle () {
       return `${this.isCreateAuthors ? 'Criação' : 'Edição'} de autores`
     },
 
