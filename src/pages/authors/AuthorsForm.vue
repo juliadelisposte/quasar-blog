@@ -1,13 +1,15 @@
 <template>
   <div class="page-authors-form">
-    <h1 class="text-h5 row justify-center q-py-md text-primary">Criação de Autores</h1>
+    <h1 class="text-h5 row justify-center q-py-md text-primary"> {{ pageTitle }} </h1>
     <div class="row justify-center">
       <div class="col-md-8 q-pt-sm">
         <q-form class="q-gutter-md" @submit="submit">
           <q-input filled v-model="values.name" label="Insira o nome do autor" hint="Nome e Sobrenome"/>
           <q-input filled v-model="values.email" label="Insira o e-mail do autor" type="email"/>
           <div class="row justify-center q-pt-sm">
-            <q-btn label="Salvar" type="submit" color="primary"/>
+            <div class="row justify-center q-mt-lg">
+              <q-btn color="primary" type="submit" icon-right="send"> {{ submitButtonLabel }} </q-btn>
+            </div>
           </div>
         </q-form>
       </div>
@@ -17,6 +19,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import { extend } from 'quasar'
 
 export default {
   data () {
@@ -28,13 +31,58 @@ export default {
     }
   },
 
+  computed: {
+    isCreateAuthors () {
+      return this.$route.name === 'AuthorsCreate'
+    },
+
+    pageTitle () {
+      return `${this.isCreateAuthors ? 'Criação' : 'Edição'} de autores`
+    },
+
+    submitButtonLabel () {
+      return this.isCreateAuthors ? 'Criar' : 'Editar'
+    },
+
+    idAuthor () {
+      return this.$route.params.id
+    }
+  },
+
+  created () {
+    if (!this.isCreateAuthors) {
+      this.setAuthorValues()
+    }
+  },
+
   methods: {
     ...mapActions({
-      createAuthors: 'authors/createAuthors'
+      postAuthors: 'authors/postAuthors',
+      putAuthors: 'authors/putAuthors',
+      fetchAuthor: 'authors/fetchAuthor'
     }),
 
     submit () {
-      this.createAuthors(this.values)
+      this.isCreateAuthors ? this.createAuthors() : this.editAuthor()
+      this.$router.push({ name: 'AuthorsList' })
+    },
+
+    async editAuthor () {
+      const values = {
+        values: this.values,
+        id: this.idAuthor
+      }
+
+      await this.putAuthors(values)
+    },
+
+    async createAuthors () {
+      await this.postAuthors(this.values)
+    },
+
+    async setAuthorValues () {
+      const author = await this.fetchAuthor(this.idAuthor)
+      this.values = extend(true, {}, author)
     }
   }
 }
