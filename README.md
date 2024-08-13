@@ -30,6 +30,8 @@ See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 # API
 
 #### run the server with the code
+```bash
 npx json-server --watch db.json
+```
 
 
