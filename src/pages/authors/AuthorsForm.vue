@@ -4,8 +4,8 @@
     <div class="row justify-center">
       <div class="col-md-8 q-pt-sm">
         <q-form class="q-gutter-md" @submit="submit">
-          <q-input filled v-model="values.name" label="Insira o nome do autor" hint="Nome e Sobrenome"/>
-          <q-input filled v-model="values.email" label="Insira o e-mail do autor" type="email"/>
+          <q-input filled v-model="values.name" label="Insira o nome do autor" hint="Nome e Sobrenome" />
+          <q-input filled v-model="values.email" label="Insira o e-mail do autor" type="email" />
           <div class="row justify-center q-pt-sm">
             <div class="row justify-center q-mt-lg">
               <q-btn color="primary" type="submit" icon-right="send"> {{ submitButtonLabel }} </q-btn>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import { mapActions } from 'vuex'
 import { extend } from 'quasar'
 
@@ -62,8 +63,8 @@ export default {
       fetchAuthor: 'authors/fetchAuthor'
     }),
 
-    submit () {
-      this.isCreateAuthors ? this.createAuthors() : this.editAuthor()
+    async submit () {
+      this.isCreateAuthors ? await this.createAuthors() : await this.editAuthor()
       this.$router.push({ name: 'AuthorsList' })
     },
 
@@ -72,12 +73,19 @@ export default {
         values: this.values,
         id: this.idAuthor
       }
-
       await this.putAuthors(values)
     },
 
     async createAuthors () {
-      await this.postAuthors(this.values)
+      try {
+        const response = await axios.post('/authors', {
+          ...this.values,
+          id: Date.now() // Gera um ID único baseado no timestamp atual
+        })
+        console.log('Autor criado com sucesso:', response.data)
+      } catch (error) {
+        console.error('Erro ao criar o autor:', error)
+      }
     },
 
     async setAuthorValues () {
@@ -87,3 +95,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.page-authors-form {
+  &__title {
+    color: $primary;
+  }
+}
+</style>

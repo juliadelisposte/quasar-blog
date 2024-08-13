@@ -1,22 +1,54 @@
 {
   "posts": [
     {
-      "mainImageURL": "https://d2bsjm9patfdz0.cloudfront.net/images/0000158_monica-turma-da-monica.png",
-      "title": "Monica",
-      "shortDescription": "monique",
-      "authorName": "Monica",
-      "category": "",
-      "mainText": "te",
-      "postDate": "28/04/2021",
-      "id": 1
+      "title": "dddd",
+      "id": 1722919217553
+    },
+    {
+      "title": "hthty",
+      "id": 1722921970720
+    },
+    {
+      "mainImageURL": "https://i.pinimg.com/564x/5d/a4/fb/5da4fb27fb9e4768f503661dd8ce89bb.jpg",
+      "title": "Money",
+      "shortDescription": "This is a post idea",
+      "authorName": {
+        "label": "cleyton",
+        "value": "cleyton"
+      },
+      "category": "Categoria 2",
+      "mainText": "This is a post idea, you can write everything you want here.",
+      "postDate": "09/08/2024",
+      "id": 1722922249507
+    },
+    {
+      "mainImageURL": "https://i.pinimg.com/564x/5d/a4/83/5da48332acceb3e280928aeae76efe2f.jpg",
+      "title": "Manifesting Board",
+      "shortDescription": "Welcome to the Manifesting Board!",
+      "authorName": {
+        "label": "teste",
+        "value": "teste"
+      },
+      "category": "Categoria 2",
+      "mainText": "Welcome to the Manifesting Board!\nThis is a place for you manifest your dreams, you can create new posts with a title, author, category, date, small description and the really content that you can write everything you want!",
+      "postDate": "08/08/2024",
+      "id": 1722968607167
+    },
+    {
+      "mainImageURL": "https://i.pinimg.com/564x/6b/86/a6/6b86a69b9e88ac7ae9dd6afe101709be.jpg",
+      "title": "Cozy Place",
+      "shortDescription": "This is a post idea",
+      "authorName": {
+        "label": "teste",
+        "value": "teste"
+      },
+      "category": "Categoria 2",
+      "mainText": "This is a post idea",
+      "postDate": "21/08/2024",
+      "id": 1723153629412
     }
   ],
   "authors": [
-    {
-      "name": "Monica",
-      "email": "monica@hot.com",
-      "id": 1
-    },
     {
       "name": "cleyton",
       "email": "cleyton@cleyton",
@@ -26,6 +58,21 @@
       "name": "teste",
       "email": "teste@teste.com",
       "id": 3
+    },
+    {
+      "name": "teste",
+      "email": "teste@teste.com",
+      "id": 1722918524232
+    },
+    {
+      "name": "aa",
+      "email": "teste@aa.com",
+      "id": 1722918536538
+    },
+    {
+      "name": "fgerdgerg",
+      "email": "gerger@frg.com",
+      "id": 1722968558679
     }
   ]
 }

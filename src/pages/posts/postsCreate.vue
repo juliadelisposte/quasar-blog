@@ -4,7 +4,7 @@
       <div class="row justify-center">
         <div class="col col-md-8">
           <div class="pages-posts-create__title">
-            <q-input class="q-pr-lg" v-model="values.inputTitle" color="secondary" clearable filled label="Insira o título o seu post" />
+            <q-input class="q-pr-lg" v-model="values.inputTitle" color="secondary" clearable filled label="Insira o título do seu post" />
           </div>
         </div>
       </div>
@@ -42,21 +42,23 @@
             </template>
           </q-input>
         </div>
-          <div class="col col-md-8">
-            <div class="pages-posts-create__post-area">
-              <q-input class="q-pr-lg" v-model="values.inputDescription" color="secondary" clearable filled label="Insira a pequena descrição do seu post" />
-              <q-input class="q-pr-lg q-mb-md q-mt-lg" v-model="values.inputPost" color="secondary" filled type="textarea" label="Insira o conteúdo do seu post" />
-            </div>
+        <div class="col col-md-8">
+          <div class="pages-posts-create__post-area">
+            <q-input class="q-pr-lg" v-model="values.inputDescription" color="secondary" clearable filled label="Insira a pequena descrição do seu post" />
+            <q-input class="q-pr-lg q-mb-md q-mt-lg" v-model="values.inputPost" color="secondary" filled type="textarea" label="Insira o conteúdo do seu post" />
           </div>
+        </div>
       </div>
       <div class="row justify-center q-mt-lg">
-        <q-btn color="primary" icon-right="send" label="Postar" />
+        <q-btn color="primary" icon-right="send" label="Salvar" @click="submitPost" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+import { mapActions } from 'vuex'
 
 export default {
   data () {
@@ -66,15 +68,109 @@ export default {
         inputDescription: '',
         inputPost: '',
         url: '',
-        modelCategory: 'Escolha a categoria',
-        modelAuthor: 'Escolha o autor'
+        modelCategory: '',
+        modelAuthor: '',
+        date: ''
       },
       optionsCategory: [
         'Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5'
       ],
-      optionsAuthor: [
-        'Autor 1', 'Autor 2', 'Autor 3', 'Autor 4', 'Autor 5'
-      ]
+      optionsAuthor: [],
+      idPost: this.$route.params.id
+    }
+  },
+
+  created () {
+    this.fetchAuthors()
+    if (this.$route.params.id) {
+      this.idPost = this.$route.params.id
+      this.setPostValues()
+    }
+  },
+
+  methods: {
+    ...mapActions({
+      createPost: 'posts/createPost',
+      updatePost: 'posts/updatePost',
+      fetchPost: 'posts/fetchPost'
+    }),
+
+    async createPosts () {
+      try {
+        const newPost = {
+          mainImageURL: this.values.url,
+          title: this.values.inputTitle,
+          shortDescription: this.values.inputDescription,
+          authorName: this.values.modelAuthor,
+          category: this.values.modelCategory,
+          mainText: this.values.inputPost,
+          postDate: this.values.date,
+          id: Date.now() // Gerar um ID único
+        }
+
+        await this.createPost(newPost)
+        this.$router.push({ name: 'PostsList' })
+      } catch (error) {
+        console.error('Erro ao criar o post:', error)
+      }
+    },
+
+    async editPost () {
+      try {
+        const updatedPost = {
+          mainImageURL: this.values.url,
+          title: this.values.inputTitle,
+          shortDescription: this.values.inputDescription,
+          authorName: this.values.modelAuthor,
+          category: this.values.modelCategory,
+          mainText: this.values.inputPost,
+          postDate: this.values.date
+        }
+
+        await this.updatePost({ id: this.idPost, values: updatedPost })
+        this.$router.push({ name: 'PostsList' })
+      } catch (error) {
+        console.error('Erro ao atualizar o post:', error)
+      }
+    },
+
+    async setPostValues () {
+      try {
+        const post = await this.fetchPost(this.idPost)
+        // Preencher o modelo com os dados do post
+        this.values = {
+          inputTitle: post.title,
+          inputDescription: post.shortDescription,
+          inputPost: post.mainText,
+          url: post.mainImageURL,
+          modelCategory: post.category,
+          modelAuthor: post.authorName,
+          date: post.postDate
+        }
+      } catch (error) {
+        console.error('Erro ao buscar o post:', error)
+      }
+    },
+
+    submitPost () {
+      if (this.idPost) {
+        this.editPost()
+      } else {
+        this.createPosts()
+      }
+    },
+
+    fetchAuthors () {
+      axios.get('/authors')
+        .then(response => {
+          this.optionsAuthor = response.data.map(author => ({
+            label: author.name,
+            value: author.name
+          }))
+        })
+        .catch(error => {
+          console.error('Erro ao buscar os autores:', error)
+        })
     }
   }
 }

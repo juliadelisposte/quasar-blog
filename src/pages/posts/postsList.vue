@@ -1,23 +1,27 @@
 <template>
   <div class="page-posts-list">
     <q-page class="flex flex-center">
-      <div v-for="value in postsList" :key="value">
-        <card-content :content="value"/>
+      <div v-for="post in paginatedPosts" :key="post.id">
+        <card-content :content="post" />
       </div>
     </q-page>
-    <div class=" flex flex-center">
-      <q-pagination v-model="current" :max="5" />
+    <div class="flex flex-center">
+      <q-pagination v-model="current" :max="maxPages" />
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import CardContent from 'src/components/CardContent.vue'
 
 export default {
   data () {
     return {
-      current: 1
+      current: 1,
+      postsList: [],
+      totalPosts: 0,
+      postsPerPage: 5
     }
   },
 
@@ -26,82 +30,31 @@ export default {
   },
 
   computed: {
-    postsList () {
-      return [
-        {
-          title: 'titulo',
-          alteration: '23/04/2021',
-          author: 'desconhecido',
-          date: '23/04/2021',
-          category: 'categoria',
-          description: 'A pequena descrição entra aqui',
-          buttonReadMore: 'Leia Mais',
-          buttonEdit: 'Editar Post',
-          buttonDelete: 'Excluir post',
-          photo: 'https://i.pinimg.com/736x/c3/6b/00/c36b00c3a9e3bfddea0c60be4c240990.jpg'
-        },
-        {
-          title: 'titulo 2',
-          alteration: '03/05/2021',
-          author: 'desconhecido 2',
-          date: '23/04/2021',
-          category: 'categoria 2',
-          description: 'A pequena descrição entra aqui',
-          buttonReadMore: 'Leia Mais',
-          buttonEdit: 'Editar Post',
-          buttonDelete: 'Excluir post',
-          photo: 'https://wallpapercave.com/wp/wp6181121.jpg'
-        },
-        {
-          title: 'titulo 3',
-          alteration: '03/05/2021',
-          author: 'desconhecido 3',
-          date: '23/04/2021',
-          category: 'categoria 3',
-          description: 'A pequena descrição entra aqui',
-          buttonReadMore: 'Leia Mais',
-          buttonEdit: 'Editar Post',
-          buttonDelete: 'Excluir post',
-          photo: 'https://images6.alphacoders.com/103/1035008.jpg'
-        },
-        {
-          title: 'titulo 3',
-          alteration: '03/05/2021',
-          author: 'desconhecido 3',
-          date: '23/04/2021',
-          category: 'categoria 3',
-          description: 'A pequena descrição entra aqui',
-          buttonReadMore: 'Leia Mais',
-          buttonEdit: 'Editar Post',
-          buttonDelete: 'Excluir post',
-          photo: 'https://images6.alphacoders.com/103/1035008.jpg'
-        },
-        {
-          title: 'titulo 3',
-          alteration: '03/05/2021',
-          author: 'desconhecido 3',
-          date: '23/04/2021',
-          category: 'categoria 3',
-          description: 'A pequena descrição entra aqui',
-          buttonReadMore: 'Leia Mais',
-          buttonEdit: 'Editar Post',
-          buttonDelete: 'Excluir post',
-          photo: 'https://images6.alphacoders.com/103/1035008.jpg'
-        },
-        {
-          title: 'titulo 3',
-          alteration: '03/05/2021',
-          author: 'desconhecido 3',
-          date: '23/04/2021',
-          category: 'categoria 3',
-          description: 'A pequena descrição entra aqui',
-          buttonReadMore: 'Leia Mais',
-          buttonEdit: 'Editar Post',
-          buttonDelete: 'Excluir post',
-          photo: 'https://images6.alphacoders.com/103/1035008.jpg'
-        }
-      ]
+    paginatedPosts () {
+      const start = (this.current - 1) * this.postsPerPage
+      const end = start + this.postsPerPage
+      return this.postsList.slice(start, end)
+    },
+    maxPages () {
+      return Math.ceil(this.totalPosts / this.postsPerPage)
     }
+  },
+
+  methods: {
+    fetchPosts () {
+      axios.get('/posts') // Substitua o caminho se necessário
+        .then(response => {
+          this.postsList = response.data
+          this.totalPosts = this.postsList.length
+        })
+        .catch(error => {
+          console.error('Erro ao buscar os posts:', error)
+        })
+    }
+  },
+
+  mounted () {
+    this.fetchPosts()
   }
 }
 </script>

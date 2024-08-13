@@ -1,26 +1,23 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="bg-brown">
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu">
           <q-menu>
-          <q-list>
-            <q-item clickable v-close-popup>
-              <q-item-section>
-                <essential-link v-for="route in essentialLinks" :key="route.title" :content="route" />
-              </q-item-section>
-            </q-item>
-          </q-list>
+            <q-list>
+              <q-item clickable v-close-popup>
+                <q-item-section>
+                  <essential-link v-for="route in essentialLinks" :key="route.title" :content="route" />
+                </q-item-section>
+              </q-item>
+            </q-list>
           </q-menu>
         </q-btn>
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
+    <div class="header-container">
+      <img src="../assets/img/banner.png">
+    </div>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -64,7 +61,12 @@ export default {
 </script>
 
 <style scoped>
-  q-list {
-    min-width: 100px
-  }
+.bg-brown {
+  background-color: #A0522D;
+}
+
+.header-container {
+  text-align: center;
+  margin-bottom: -100px;
+}
 </style>

@@ -2,6 +2,9 @@
 
 A Quasar Framework app
 
+## rodar
+npx json-server --watch db.json
+
 ## Install the dependencies
 ```bash
 npm install

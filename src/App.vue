@@ -1,10 +1,23 @@
 <template>
-  <div id="q-app">
+  <div class="main" id="q-app" :color="color">
     <router-view />
   </div>
 </template>
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+
+  data () {
+    return {
+      color: 'primary'
+    }
+  }
+
 }
 </script>
+
+<style scoped>
+.main {
+  background-color: #FAEBD7;
+}
+</style>
