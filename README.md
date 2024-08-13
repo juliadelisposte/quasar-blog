@@ -2,8 +2,6 @@
 
 A Quasar Framework app
 
-## rodar
-npx json-server --watch db.json
 
 ## Install the dependencies
 ```bash
@@ -31,21 +29,7 @@ See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 
 # API
 
-#### Install the dependencies
-
-inside `./api`
-```bash
-npm install
-```
-
-```bash
-npm run seed
-```
-
-```bash
-npm run server
-```
-
-server is running at port: `5051`.
+#### run the server with the code
+npx json-server --watch db.json
 
 
